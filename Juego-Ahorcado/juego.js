@@ -92,7 +92,60 @@ function deshabilitarBotones() {
 }
 
 
+//Dibujo del muñeco de ahorcado
+function dibujarBase() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  ctx.lineWidth = 2;
+  ctx.beginPath();
+  ctx.moveTo(10, 240);
+  ctx.lineTo(190, 240); // base
+  ctx.moveTo(50, 240);
+  ctx.lineTo(50, 20);   // poste
+  ctx.lineTo(130, 20);  // barra superior
+  ctx.lineTo(130, 40);  // cuerda
+  ctx.stroke();
+}
 
+function dibujarParte(intento) {
+  ctx.beginPath();
+  switch (intento) {
+    case 1: // cabeza
+      ctx.arc(130, 60, 20, 0, Math.PI * 2);
+      break;
+    case 2: // torso
+      ctx.moveTo(130, 80);
+      ctx.lineTo(130, 140);
+      break;
+    case 3: // pierna izquierda
+      ctx.moveTo(130, 140);
+      ctx.lineTo(110, 180);
+      break;
+    case 4: // pierna derecha
+      ctx.moveTo(130, 140);
+      ctx.lineTo(150, 180);
+      break;
+    case 5: // brazo izquierdo
+      ctx.moveTo(130, 100);
+      ctx.lineTo(110, 120);
+      break;
+    case 6: // brazo derecho
+      ctx.moveTo(130, 100);
+      ctx.lineTo(150, 120);
+      break;
+    case 7: // ahorcado (cuerda al cuello)
+      ctx.moveTo(130, 40);
+      ctx.lineTo(130, 60);
+      break;
+  }
+  ctx.stroke();
+}
+
+iniciarJuego();
+
+const botonReiniciar = document.getElementById("reiniciar");
+botonReiniciar.addEventListener("click", iniciarJuego);
+
+window.onload = iniciarJuego;
 
 
 

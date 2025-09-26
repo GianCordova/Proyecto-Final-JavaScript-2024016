@@ -1,3 +1,54 @@
-body{
-    
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  margin: 20px;
+}
+
+#palabra {
+  font-size: 24px;
+  letter-spacing: 8px;
+  margin-bottom: 20px;
+}
+
+#letras {
+  margin: 20px;
+}
+
+button {
+  margin: 6px;
+  padding: 10px 14px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 6px;
+  border: 1px solid #333;
+  background-color: #e0e0e0;
+  transition: background 0.2s;
+}
+
+button:hover {
+  background-color: #b3d9ff;
+}
+
+#canvas {
+  border: 1px solid #000;
+  margin-top: 20px;
+  background-color: #f9f9f9;
+}
+
+#mensaje {
+  margin-top: 20px;
+  font-size: 18px;
+  font-weight: bold;
+  min-height: 24px;
+}
+
+#reiniciar {
+  margin-top: 20px;
+  background-color: #4caf50;
+  color: white;
+  font-weight: bold;
+}
+
+#reiniciar:hover {
+  background-color: #45a049;
 }
