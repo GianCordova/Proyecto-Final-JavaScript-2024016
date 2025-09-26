@@ -23,8 +23,8 @@ const ctx = canvas.getContext("2d");
 function iniciarJuego() {
     palabraSecreta = obtenerPalabraAlAzar();
     palabraMostrada = Array(palabraSecreta.length).fill("_");
-    let intentos = 0;
-    let letrasUsadas = [];
+    intentos = 0;
+    letrasUsadas = [];
     divMensaje.textContent = "";
     dibujarBase();
     mostrarPalabra();
@@ -73,7 +73,7 @@ function actualizarPalabra(letra) {
             palabraMostrada[i] = letra;
         }
     }
-    mostrarPalabra;
+    mostrarPalabra();
 }
 
 function verificarFinJuego() {
@@ -81,7 +81,8 @@ function verificarFinJuego() {
         divMensaje.textContent = `Ganaste, adivinaste la palabra "${palabraSecreta}" en ${intentos} intentos`;
         deshabilitarBotones();
     } else if (intentos === 7) {
-        divMensaje.textContent = `Perdiste, la palabra era "${palabraSecreta}".`;
+        divMensaje.textContent = `Perdiste, la palabra era "${palabraSecreta}"`;
+        deshabilitarBotones();
     }
 }
 
@@ -89,6 +90,10 @@ function deshabilitarBotones() {
     let botones = divLetras.querySelectorAll("button");
     botones.forEach(boton => boton.disabled = true);
 }
+
+
+
+
 
 
 
